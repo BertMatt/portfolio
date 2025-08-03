@@ -13,7 +13,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: #f5f2e8 url('paper-pattern.png') repeat;
-  background-size: 150px 150px;
+  background-size: 250px 250px;
   /* background-blend-mode: luminosity; */
   padding: 40px 20px;
   max-width: 700px;
@@ -33,7 +33,7 @@ body {
 .name {
   font-size: 1rem;
   font-weight: 500;
-  color: #CE8200; /* Red color for name */
+  color: #087e8b; 
   display: flex;
   align-items: center;
   gap: 80px;
@@ -46,7 +46,7 @@ body {
 }
 
 .nav a {
-  color: #666;
+  color: #333;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 400;
@@ -61,15 +61,15 @@ body {
 .main-title {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #CE8200; 
+  color: #087e8b; 
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 150px;
+  color: #333;
+  margin-bottom: 100px;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -94,7 +94,7 @@ body {
   grid-row: 1;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #CE8200; /* Red color for project titles */
+  color: #087e8b; /* Red color for project titles */
   margin: 0;
   line-height: 1.3;
 }
@@ -119,7 +119,7 @@ body {
 }
 
 .project-link {
-  color: #2d2d2d;
+  color: #087e8b;
   text-decoration: underline;
   text-decoration-color: #ccc;
   transition: text-decoration-color 0.2s ease;
