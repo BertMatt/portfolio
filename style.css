@@ -1,150 +1,193 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Georama:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    line-height: 1.6;
-    color: #4a4a4a;
-    background-color: #f5f2e8; /* Warm beige/tan background */
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+  font-family: 'Georama', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f2e8 url('paper-pattern.png') repeat;
+  background-size: 150px 150px;
+  /* background-blend-mode: luminosity; */
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 22px;
 }
 
 /* Header styles */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
 }
 
 .name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #8b4513; /* Bronze/brown color for name */
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #CE8200; /* Red color for name */
+  display: flex;
+  align-items: center;
+  gap: 80px;
 }
 
 .nav {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .nav a {
-    color: #8b4513;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity 0.2s;
+  color: #666;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
 }
 
 .nav a:hover {
-    opacity: 0.7;
+  color: #2d2d2d;
 }
 
 /* Main content styles */
 .main-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #8b4513;
-    margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #CE8200; 
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #6b6b6b;
-    margin-bottom: 50px;
-    line-height: 1.5;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 150px;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
-/* Project cards */
+/* Project cards - inspired by calv.info */
 .projects {
-    display: grid;
-    gap: 40px;
+  display: grid;
+  gap: 80px; /* Increased spacing between cards */
 }
 
 .project-card {
-    border-left: 3px solid #d4af8c; /* Subtle bronze border */
-    padding-left: 20px;
-    padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 12px 20px;
+  padding-bottom: 20px; /* Reduced padding since no border */
+  /* Removed border-bottom */
 }
 
 .project-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #8b4513;
-    margin-bottom: 8px;
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #CE8200; /* Red color for project titles */
+  margin: 0;
+  line-height: 1.3;
 }
 
 .project-date {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 0.95rem;
+  color: #2d2d2d; /* Deep black for dates */
+  text-align: right;
+  font-weight: 500; /* Slightly bolder for better visibility */
+  white-space: nowrap;
 }
 
 .project-description {
-    color: #4a4a4a;
-    line-height: 1.6;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .project-link {
-    color: #8b4513;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.2s;
+  color: #2d2d2d;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  transition: text-decoration-color 0.2s ease;
+  font-weight: 500;
 }
 
 .project-link:hover {
-    border-bottom-color: #8b4513;
+  text-decoration-color: #2d2d2d;
 }
 
 /* Responsive design */
 @media (max-width: 600px) {
-    body {
-        padding: 20px 15px;
-    }
-    
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-    
-    .nav {
-        gap: 20px;
-    }
-    
-    .main-title {
-        font-size: 1.7rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-    }
-    
-    .project-card {
-        padding-left: 15px;
-    }
+  body {
+    padding: 20px 15px;
+    font-size: 15px;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .nav {
+    gap: 20px;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .projects {
+    gap: 60px; /* Increased spacing for mobile too */
+  }
+  
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .project-date {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .project-description {
+    grid-row: 3;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 400px) {
-    .nav {
-        gap: 15px;
-        font-size: 0.9rem;
-    }
-    
-    .main-title {
-        font-size: 1.5rem;
-    }
+  .nav {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .main-title {
+    font-size: 1.6rem;
+  }
 }
