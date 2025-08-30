@@ -22,8 +22,11 @@
         <p class="subtitle">A collection of my recent readings and my thoughts on it</p>
         <section class="bookshelf">
             <div class="book-card" style="display: flex; align-items: center;">
-                <!-- add intrinsic size and lazy loading to avoid layout shift and defer fetch -->
-                <img src="assets/thecomingwave.png" alt="The Coming Wave book cover" class="book-cover" width="180" height="270" loading="lazy" style="width:180px;">
+                <!-- use WebP with PNG fallback to serve optimal image sizes -->
+                <picture>
+                  <source srcset="assets/thecomingwave.webp" type="image/webp">
+                  <img src="assets/thecomingwave.png" alt="The Coming Wave book cover" class="book-cover" width="180" height="270" loading="lazy" style="width:180px;">
+                </picture>
                 <div class="book-info">
                     <h2 class="book-title">The Coming Wave</h2>
                     <div class="book-author">Mustafa Suleyman</div>
@@ -38,7 +41,10 @@
             </div>
             
             <div class="book-card" style="display: flex; align-items: center;">
-                <img src="assets/theselfishgene.png" alt="The Selfish Gene book cover" class="book-cover" width="180" height="270" loading="lazy" style="width:180px;">
+                <picture>
+                  <source srcset="assets/theselfishgene.webp" type="image/webp">
+                  <img src="assets/theselfishgene.png" alt="The Selfish Gene book cover" class="book-cover" width="180" height="270" loading="lazy" style="width:180px;">
+                </picture>
                 <div class="book-info">
                     <h2 class="book-title">The Selfish Gene</h2>
                     <div class="book-author">Richard Dawkins</div>

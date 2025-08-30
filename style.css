@@ -12,9 +12,13 @@ body {
   font-family: 'Georama', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #f5f2e8 url('paper-pattern.png') repeat;
-  background-size: 250px 250px;
-  /* background-blend-mode: luminosity; */
+
+  /* use your real pattern as the repeating tile and control tile size */
+  background-image: url("assets/paper-pattern.webp");
+  background-repeat: repeat;
+  background-size: 120px 120px; /* make each tile smaller — adjust (e.g. 90–140px) to taste */
+  background-position: 0 0;
+  background-color: #f7f2e6; /* fallback while image loads */
   padding: 40px 20px;
   max-width: 700px;
   margin: 0 auto;
@@ -74,18 +78,16 @@ body {
   font-weight: 400;
 }
 
-/* Reduce font for elements that use .small-font (used on about.html descriptions) */
-.small-font {
-  font-size: 0.95rem; /* adjust: 0.85rem..1rem as you prefer */
-  line-height: 1.6;
+/* add vertical spacing between <p> blocks so About's paragraphs show a blank line */
+.description,
+.description.small-font {
+  margin-bottom: 1.1rem; /* adjust to taste */
 }
 
-/* Make the .description specifically a bit smaller and slightly lighter */
-.description.small-font {
+/* keep the small-font sizing */
+.small-font {
   font-size: 0.95rem;
-  color: #444;
   line-height: 1.6;
-  font-weight: 400;
 }
 
 /* Project cards - inspired by calv.info */
