@@ -69,7 +69,7 @@ body {
 .subtitle {
   font-size: 1.1rem;
   color: #333;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -130,6 +130,210 @@ body {
   text-decoration-color: #2d2d2d;
 }
 
+/* Book review styles */
+.book-review {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 1rem;
+}
+
+/* Book card styles */
+.book-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.book-cover {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ideas section styles */
+.ideas-section {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem; /* Add margin-top to control gap from subtitle */
+}
+/* Decrease gap from categories to subtitle by 40% (was 2rem, now 1.2rem) */
+.filters {
+  margin-top: 0.5rem;
+}
+
+/* Decrease the size of the category buttons */
+.filter-btn {
+  border: none;
+  border-radius: 16px;
+  padding: 0.35em 0.9em; /* Reduced padding */
+  background: #f3f4f8;
+  color: #23272f;
+  cursor: pointer;
+  font-size: 0.8em; /* Reduced font size */
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-btn.active,
+.filter-btn.cat-physical.active {
+  background: #e3f6fc;
+  color: #21748b;
+}
+.filter-btn.cat-software.active {
+  background: #e9e7fd;
+  color: #5b4bb7;
+}
+.filter-btn.cat-sustainable.active {
+  background: #eafbe7;
+  color: #3d7a3a;
+}
+.filter-btn.cat-vision.active {
+  background: #f9e8fd;
+  color: #a14b9e;
+}
+.filter-btn.cat-life.active {
+  background: #fdf7e7;
+  color: #b78a4b;
+}
+.filter-btn.cat-work {
+  background: #f3f4f8;
+  color: #23272f;
+}
+.filter-btn.cat-work.active {
+  background: #ffb8a6;
+  color: #7a2200;
+}
+.idea-card {
+  position: relative;
+  background: #f3f4f8;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 1.7rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #23272f;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.idea-title {
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+  color: #087e8b;
+  font-weight: 600;
+}
+.idea-categories {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.7em;
+  flex-wrap: wrap;
+}
+.cat-physical { background: #e3f6fc; color: #21748b; }
+.cat-software { background: #e9e7fd; color: #5b4bb7; }
+.cat-sustainable { background: #eafbe7; color: #3d7a3a; }
+.cat-vision { background: #f9e8fd; color: #a14b9e; }
+.cat-life { background: #fdf7e7; color: #b78a4b; }
+.cat-work { background: #ffe7e0; color: #b84a00; }
+.idea-category {
+  font-size: 0.9em;
+  border-radius: 12px;
+  padding: 0.2em 0.8em;
+  font-weight: 500;
+  opacity: 0.95;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  filter: brightness(0.98);
+}
+.idea-category.highlight.cat-physical,
+.filter-btn.cat-physical.active {
+  background: #7ee7f7;
+  color: #0d3c4a;
+  box-shadow: 0 0 0 2px #7ee7f755;
+  filter: brightness(1.1);
+}
+.idea-category.highlight.cat-software,
+.filter-btn.cat-software.active {
+  background: #bcb6fa;
+  color: #2d1e7a;
+  box-shadow: 0 0 0 2px #bcb6fa55;
+  filter: brightness(1.1);
+}
+.idea-category.highlight.cat-sustainable,
+.filter-btn.cat-sustainable.active {
+  background: #b8f7b1;
+  color: #1e4a1a;
+  box-shadow: 0 0 0 2px #b8f7b155;
+  filter: brightness(1.1);
+}
+.idea-category.highlight.cat-vision,
+.filter-btn.cat-vision.active {
+  background: #f3b8fa;
+  color: #5e1e4a;
+  box-shadow: 0 0 0 2px #f3b8fa55;
+  filter: brightness(1.1);
+}
+.idea-category.highlight.cat-life,
+.filter-btn.cat-life.active {
+  background: #fbe7b8;
+  color: #7a5a1e;
+  box-shadow: 0 0 0 2px #fbe7b855;
+  filter: brightness(1.1);
+}
+.idea-category.highlight.cat-work,
+.filter-btn.cat-work.active {
+  background: #ffb8a6;
+  color: #7a2200;
+  box-shadow: 0 0 0 2px #ffb8a655;
+  filter: brightness(1.1);
+}
+.idea-description {
+  color: #444;
+  font-size: 1em;
+}
+
+.idea-status {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+}
+
+.status-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  border: 2px solid;
+  border-radius: 16px;
+  font-size: 0.95em;
+  font-weight: 600;
+  padding: 0.18em 0.9em 0.18em 0.6em;
+  background: #f3f4f8;
+  cursor: default;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  pointer-events: none; /* not clickable for now */
+}
+
+.status-icon {
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+
+.status-label {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+
 /* Responsive design */
 @media (max-width: 600px) {
   body {
@@ -178,6 +382,17 @@ body {
   
   .project-title {
     font-size: 1.2rem;
+  }
+  
+  .ideas-section {
+    max-width: 100%;
+  }
+  .idea-card {
+    padding: 1.1rem;
+    font-size: 0.95rem;
+  }
+  .idea-title {
+    font-size: 1.1em;
   }
 }
 

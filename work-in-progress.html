@@ -18,7 +18,112 @@
 
     <main>
         <h1 class="main-title">Work in Progress</h1>
-        <p class="subtitle">Coming soon...</p>
+        <p class="subtitle">A collection of ideas and projects I'm working on or plan to build.</p>
+        <section class="ideas-section">
+            <div class="filters" id="filters"></div>
+            <div id="ideas-list"></div>
+        </section>
+        <script>
+            // Define categories and their properties
+            const categories = {
+                physical: { label: "Physical product", class: "cat-physical" },
+                software: { label: "Software", class: "cat-software" },
+                sustainable: { label: "Sustainable", class: "cat-sustainable" },
+                vision: { label: "Vision", class: "cat-vision" },
+                life: { label: "Life Improvement", class: "cat-life" },
+                work: { label: "Tool for Work", class: "cat-work" }
+            };
+
+            // Define statuses and their properties
+            const statuses = {
+                done:    { label: "Done", color: "#2ecc40", bg: "#eafbe7", icon: "✔️" },
+                upcoming: { label: "Upcoming", color: "#888", bg: "#f3f4f8", icon: "⏳" },
+                working: { label: "Working on it", color: "#bfa100", bg: "#fffbe7", icon: "🛠️" },
+                abandoned: { label: "Abandoned", color: "#d7263d", bg: "#ffeaea", icon: "✖️" }
+            };
+
+            // Define ideas
+            const ideas = [
+                {
+                    title: "Search Email Extension",
+                    categories: ["software", "life", "work"],
+                    description: "Sometimes when we are working we just need to quickly look for something in our emails, maybe a name or a piece of data. This extension will be opened with a quick shortcut and will allow the user to retrieve information from their emails without having to leave the current tab. The idea is to make the extension flexible and modular, so the user won't just be able to search inside emails but also other services (e.g. Notion)",
+                    status: "working"
+                },
+                {
+                    title: "Diet and Grocery Assistant",
+                    categories: ["software", "life"],
+                    description: "I want to experiment with mobile applications by creating an AI powered app linked to high quality diet databases that will be able to be set up based on the goals of the user and will provide meal plans after a conversation where it would make sure the user preferences. The meal plans will be provided weekly, as well as a list of exactly what groceries the user will need to buy, as a grocery list. Often when trying to follow a diet, the mental stress of having to check what to buy and figuring out what food you would need to buy can make users want to give up. This app will make it all easy and worry free, with a clear plan and an exact list of what to buy and when, everything easily recustomizable from a chat interface.",
+                    status: "upcoming"
+                },
+                {
+                    title: "Reusable Ergonomic Flossing Tool",
+                    categories: ["life", "physical", "sustainable"],
+                    description: "Flossing is essential for gum health, but using just the traditional floss can be uncomfortable on the fingers and hard to maneuver. Moreover we always end up using way more than we need because of the way you have to hold it. I never liked it, there are some tools that are supposed to make it more convenients as holders, but i think they have an overcomplex design while some simple cut and clip on the edges would use 10% of the floss and be way easier to handle. Wasting less material, being easier to hold and making people floss more",
+                    status: "upcoming"
+                },
+
+            ];
+
+            // Render filters
+            const filtersDiv = document.getElementById('filters');
+            filtersDiv.innerHTML = `<button class="filter-btn active" data-filter="all">All</button>` +
+                Object.entries(categories).map(([key, cat]) =>
+                    `<button class="filter-btn ${cat.class}" data-filter="${key}">${cat.label}</button>`
+                ).join('');
+
+            // Render ideas
+            const ideasList = document.getElementById('ideas-list');
+            function renderIdeas(filter = "all") {
+                ideasList.innerHTML = ideas
+                    .filter(idea => filter === "all" || idea.categories.includes(filter))
+                    .map(idea => {
+                        const status = statuses[idea.status];
+                        return `
+                        <div class="idea-card" data-categories="${idea.categories.join(' ')}">
+                            <div class="idea-status">
+                                <button class="status-btn" style="color:${status.color};background:${status.bg};border-color:${status.color};" title="${status.label}">
+                                    <span class="status-icon">${status.icon}</span>
+                                    <span class="status-label">${status.label}</span>
+                                </button>
+                            </div>
+                            <div class="idea-title">${idea.title}</div>
+                            <div class="idea-categories">
+                                ${idea.categories.map(catKey =>
+                                    `<span class="idea-category ${categories[catKey].class}${filter !== "all" && catKey === filter ? " highlight" : ""}">${categories[catKey].label}</span>`
+                                ).join('')}
+                            </div>
+                            <div class="idea-description">${idea.description}</div>
+                        </div>
+                    `;
+                    }).join('');
+            }
+            renderIdeas();
+
+            // Filtering logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filtersDiv.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('filter-btn')) return;
+                filterBtns.forEach(b => {
+                    b.classList.remove(
+                        'active',
+                        'cat-physical',
+                        'cat-software',
+                        'cat-sustainable',
+                        'cat-vision',
+                        'cat-life',
+                        'cat-work'
+                    );
+                    // Always reset to colorless (default) for all except the active one
+                });
+                e.target.classList.add('active');
+                const filter = e.target.dataset.filter;
+                if (filter !== 'all') {
+                    e.target.classList.add(categories[filter].class);
+                }
+                renderIdeas(filter);
+            });
+        </script>
     </main>
 </body>
 </html>
