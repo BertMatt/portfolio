@@ -24,6 +24,9 @@
             <div id="ideas-list"></div>
         </section>
         <script>
+  window.addEventListener('error', e => console.error('Runtime error:', e.message, e.filename, e.lineno, e.colno));
+  window.addEventListener('unhandledrejection', e => console.error('Unhandled promise rejection', e.reason));
+
             // Define categories and their properties
             const categories = {
                 physical: { label: "Physical product", class: "cat-physical" },
