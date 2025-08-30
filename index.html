@@ -94,7 +94,15 @@
                     <a href="#" class="project-link">Explore dashboard</a>
                 </p>
             </article>
+        -->
         </section>
     </main>
+    <script>
+      // open absolute (http/https) links in a new tab for safety
+      document.querySelectorAll('a[href^="http"]').forEach(a => {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      });
+    </script>
 </body>
 </html>
