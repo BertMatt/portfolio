@@ -84,6 +84,11 @@ body {
   margin-bottom: 1.1rem; /* adjust to taste */
 }
 
+/* stronger safeguard for deployed builds where CSS order/caching may differ */
+p.description {
+  margin: 0 0 1.2rem !important; /* enforce bottom spacing for <p class="description"> */
+}
+
 /* keep the small-font sizing */
 .small-font {
   font-size: 0.95rem;
