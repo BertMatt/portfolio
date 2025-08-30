@@ -74,6 +74,20 @@ body {
   font-weight: 400;
 }
 
+/* Reduce font for elements that use .small-font (used on about.html descriptions) */
+.small-font {
+  font-size: 0.95rem; /* adjust: 0.85rem..1rem as you prefer */
+  line-height: 1.6;
+}
+
+/* Make the .description specifically a bit smaller and slightly lighter */
+.description.small-font {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
 /* Project cards - inspired by calv.info */
 .projects {
   display: grid;
